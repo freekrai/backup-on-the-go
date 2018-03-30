@@ -218,7 +218,8 @@ module BackupOnTheGo #:nodoc:#
 
       gh_repos.each do |repo|
         # only back up private repositories with the owner specified
-        if repo.owner.login == config[:github_repos_owner] and repo.private?
+#       if repo.owner.login == config[:github_repos_owner] and repo.private?
+        if repo.private?
           repo_each_proc.call(repo)
         end
       end
